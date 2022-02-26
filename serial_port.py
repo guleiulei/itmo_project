@@ -1,7 +1,7 @@
 import serial
 
 def serial_port():
-    """ Определяет номер подключенного com-порта Windows"""
+    """ Определение подключенного com-порта Windows"""
     ports = ['COM%s' % i for i in range(256)]
     result = ''
     for port in ports:

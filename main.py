@@ -13,7 +13,7 @@ step_x = (x2 - x1) / maxsize # 0.00075
 
 
 x = collections.deque([0]*maxsize, maxlen=maxsize)
-y = collections.deque([0]*maxsize, maxlen=maxsize) # список со хначениям частоты
+y = collections.deque([0]*maxsize, maxlen=maxsize) # список со значениям частот
 
 serial_port = serial_port()
 with serial.Serial(serial_port, baudrate=115200) as ser:
@@ -37,11 +37,10 @@ with serial.Serial(serial_port, baudrate=115200) as ser:
                 plt.ylim(480.7, 481.8)
                 plt.plot(x, y)
 
-                plt.draw() # обновление графика
-                plt.gcf().canvas.flush_events() # обновление графикаиИ
+                plt.draw()
+                plt.gcf().canvas.flush_events()
 
                 i = 0
                 x1 += 3000
                 x2 += 3000
-            #plt.ioff()
             plt.show()
